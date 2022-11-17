@@ -1,0 +1,30 @@
+<div class="container lead">
+  <span  class="row">
+    <div class="col">
+      Auto disponibili :
+    </div>
+  </span>
+  <div class="col" *ngFor="let i of auto" style="margin-top: 20px;">
+    <span class="row border rounded-top rounded-bottom" *ngIf="i.disponibile===true">
+      <img src="{{i.immagine}}" class="col" style="width: 200px; margin-left: -15px;">
+      <label class="col" style="margin:30px 0px 70px 0px;"> {{i.marca}} </label>
+      <label class="col" style="margin:30px 0px 70px 0px;"> {{i.modello}} </label>
+      <label class="col" style="margin:30px 0px 70px 0px;"> {{i.potenza}} CV</label>
+      <a class="col btn btn-success" routerLink="/lista-auto/{{i.autoid}}" style="margin:30px 0px 70px 0px;">Vai alla descrizione</a>
+    </span>
+  </div>
+  <div style="margin-top: 40px;">
+    Auto non disponibili:
+  </div>
+  <div style="margin-bottom: 40px;">
+  <div class="col" *ngFor="let i of auto" style="margin-top: 20px;">
+    <span class="row border rounded-top rounded-bottom" *ngIf="i.disponibile===false">
+      <img src="{{i.immagine}}" class="col" style="width: 200px; margin-left: -15px;">
+      <label class="col" style="margin:30px 0px 70px 0px;"> {{i.marca}} </label>
+      <label class="col" style="margin:30px 0px 70px 0px;"> {{i.modello}} </label>
+      <label class="col" style="margin:30px 0px 70px 0px;"> {{i.potenza}} CV</label>
+      <a class="col btn btn-danger" routerLink="/lista-auto/{{i.autoid}}" style="margin:30px 0px 70px 0px;">Vai alla descrizione</a>
+    </span>
+  </div>
+</div>
+</div>
